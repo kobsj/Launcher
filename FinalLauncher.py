@@ -19,7 +19,7 @@ class App(QWidget):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
-        label_main = QLabel('Welcom John. What would you like to do today?', self)
+        label_main = QLabel('Welcome John. What would you like to do today?', self)
         label_main.move(240, 25)
 
         button_codeCamp = QPushButton('Free Code Camp', self)
@@ -64,17 +64,20 @@ class App(QWidget):
     def startCodeCamp(self):
         subprocess.call(['xdg-open', 'https://www.freecodecamp.org/'])
         subprocess.call(['xdg-open', 'https://www.youtube.com/watch?v=yaKeFoNOneg'])
+        exit()
 
     def startData(self):
         os.system('anaconda-navigator')
         subprocess.call(['xdg-open', 'https://www.udemy.com/course/learning-python-for-data-analysis-and-visualization/'])
-
+        exit()
 
     def startAtom(self):
-        print('Need to complete')
+        subprocess.call(['bash', '/usr/bin/atom'])
+        exit()
 
     def startOther(self):
         print('Start whatever gets picked')
+        exit()
 
 
 if __name__ == '__main__':
