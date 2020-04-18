@@ -40,23 +40,47 @@ class App(QWidget):
         button_pythonData.resize(125, 50)
         button_pythonData.clicked.connect(self.startData)
 
+        label_pythonData = QLabel(self)
+        pixmap_pythonData = QPixmap('Udemy-Logo.png')
+        pixmap_pythonData = pixmap_pythonData.scaledToWidth(75)
+        label_pythonData.setPixmap(pixmap_pythonData)
+        label_pythonData.move(200, 125)
+
         button_atomProject = QPushButton('Code in Atom', self)
         button_atomProject.setToolTip('Launch Atom')
         button_atomProject.move(325, 200)
         button_atomProject.resize(125, 50)
         button_atomProject.clicked.connect(self.startAtom)
 
-        button_TBD = QPushButton('Option #4 Here', self)
-        button_TBD.setToolTip('Place hoilder')
+        label_atomProject = QLabel(self)
+        pixmap_atomProject = QPixmap('atom.png')
+        pixmap_atomProject = pixmap_atomProject.scaledToWidth(75)
+        label_atomProject.setPixmap(pixmap_atomProject)
+        label_atomProject.move(350, 110)
+
+        button_TBD = QPushButton('Code in Eclipse', self)
+        button_TBD.setToolTip('Launch Eclipse')
         button_TBD.move(475, 200)
         button_TBD.resize(125, 50)
-        button_TBD.clicked.connect(self.startOther)
+        button_TBD.clicked.connect(self.startEclipse)
+
+        label_TBD = QLabel(self)
+        pixmap_TBD = QPixmap('eclipse.png')
+        pixmap_TBD = pixmap_TBD.scaledToWidth(75)
+        label_TBD.setPixmap(pixmap_TBD)
+        label_TBD.move(500, 110)
 
         button_Other = QPushButton('Something Else', self)
         button_Other.setToolTip('Close Launcher')
         button_Other.move(625, 200)
         button_Other.resize(125, 50)
         button_Other.clicked.connect(self.close)
+
+        label_Other = QLabel(self)
+        pixmap_Other = QPixmap('other.png')
+        pixmap_Other = pixmap_Other.scaledToWidth(75)
+        label_Other.setPixmap(pixmap_Other)
+        label_Other.move(650, 110)
 
         self.show()
 
@@ -75,8 +99,8 @@ class App(QWidget):
         subprocess.call(['bash', '/usr/bin/atom'])
         exit()
 
-    def startOther(self):
-        print('Start whatever gets picked')
+    def startEclipse(self):
+        subprocess.call(['/home/pkgastronaut/eclipse/cpp-2020-03/eclipse/eclipse'])
         exit()
 
 
